@@ -117,10 +117,4 @@ docker-compose up --build
 
 ---
 
-## 🛠️ Troubleshooting
-- If MySQL doesn’t start, ensure `HOST_DB_PATH` is empty before first run.  
-- If you face port conflicts, update ports in `docker-compose.yml`.  
-
----
-
 ✅ Your **Book Inventory FastAPI app** with MySQL should now be running successfully!  
