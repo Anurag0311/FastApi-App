@@ -119,6 +119,7 @@ async def get_book(
     # Convert ORM objects into serializable dictionaries
     items = [
         {
+            "id": row.id,
             "title": row.title,
             "author": row.author,
             "published_year": row.published_year,
