@@ -19,6 +19,12 @@ from exception.exception_handler import (
 # Initialize FastAPI application instance
 app = FastAPI()
 
+
+@app.on_event("startup")
+def startup_event():
+    create_table()
+
+
 # Record application start time for uptime calculation
 start_time = time.time()
 
@@ -75,14 +81,3 @@ app.add_exception_handler(ValueError, value_error_handler)
 app.add_exception_handler(RequestValidationError, validation_error_handler)
 app.add_exception_handler(SQLAlchemyError, sqlalchemy_error_handler)
 app.add_exception_handler(Exception, generic_exception_handler)
-
-
-if __name__ == "__main__":
-    """
-    Entry point for running the application directly.
-
-    - Ensures database tables are created before starting.
-    - Runs the FastAPI app using Uvicorn on host 0.0.0.0:8000 with autoreload enabled.
-    """
-    create_table()
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
