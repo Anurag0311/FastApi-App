@@ -172,7 +172,7 @@ async def get_book_by_id(id: int, session: db_dependency):
         - 200 Success with book details.
         - 404 Not Found if ID does not exist.
     """
-    data = session.query(Book).filter(Book.id == id).first()
+    data = session.query(Book).filter(Book.id == id, Book.status != "Terminated").first()
 
     if not data:
         logger.warning(f"Book not found (id={id})")
