@@ -4,15 +4,15 @@ from typing import Optional
 
 import traceback
 
-from app.DB.connection import db_dependency
-from app.schema.request_schema import BookSchema, BookUpdateSchema
-from app.models.model import Book
-from app.utils.helpers import (
+from DB.connection import db_dependency
+from schema.request_schema import BookSchema, BookUpdateSchema
+from models.model import Book
+from utils.helpers import (
     find_by_title_author,
     response_format_success,
     response_format_failure,
 )
-from app.logger.logging import get_logger
+from logger.logging import get_logger
 
 # Initialize router for book-related endpoints
 router = APIRouter()

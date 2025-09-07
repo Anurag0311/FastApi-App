@@ -1,6 +1,6 @@
 from sqlalchemy import func, exists
 
-from app.models.model import Book
+from models.model import Book
 
 
 def response_format_success(message: str, data: dict | None = None):

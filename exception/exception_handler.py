@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.utils.helpers import response_format_failure
-from app.logger.logging import get_logger
+from utils.helpers import response_format_failure
+from logger.logging import get_logger
 
 
 # Initialize application logger

@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from dotenv import load_dotenv
 from typing import Annotated
-from app.logger.logging import get_logger
+from logger.logging import get_logger
 
 import os
 

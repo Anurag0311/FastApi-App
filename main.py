@@ -6,10 +6,10 @@ from fastapi.exceptions import RequestValidationError
 import uvicorn
 import time
 
-from app.crud import books
-from app.DB.database import create_table
-from app.DB.connection import db_dependency
-from app.exception.exception_handler import (
+from crud import books
+from DB.database import create_table
+from DB.connection import db_dependency
+from exception.exception_handler import (
     value_error_handler,
     validation_error_handler,
     sqlalchemy_error_handler,

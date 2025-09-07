@@ -4,10 +4,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from app.DB.database import Base
-from app.DB.connection import get_db_session
-from app.main import app  # your FastAPI entrypoint file where router is included
-from app.models.model import Book
+from DB.database import Base
+from DB.connection import get_db_session
+from main import app  # your FastAPI entrypoint file where router is included
+from models.model import Book
 
 
 # SQLite test database
