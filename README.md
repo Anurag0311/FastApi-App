@@ -72,7 +72,9 @@ HOST_DB_PATH=ANOTHER_DIRECTORY_ON_YOUR_PC
 
 ### 4️⃣ Build & Start the Application
 
-Note: Make sure you are in the directory where Dockerfile, docker-compose.yml and .env files are in same place
+Note: 1 ) Make sure you are in the directory where Dockerfile, docker-compose.yml and .env files are in same place.
+
+2 ) If Docker Compose cannot find your Dockerfile, rename it from "DockerFile" to "Dockerfile". 
 
 Run:
 ```bash
