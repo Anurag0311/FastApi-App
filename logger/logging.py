@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-LOG_FILE_PATH = os.getenv("LOG_FILE_PATH")
 LOGGER_NAME = os.getenv("APPLICATION_NAME")
+LOG_FILE_PATH = "/app/logs"
 MAX_BYTES = 5 * 1024 * 1024  # Maximum log file size before rotation (5 MB)
 BACKUP_COUNT = 5             # Number of backup log files to keep
 
