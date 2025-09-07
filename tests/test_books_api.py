@@ -1,4 +1,5 @@
 import pytest
+import logging
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -34,6 +35,17 @@ def db_session():
 def override_db_dependency(db_session):
     # Override get_db_session in FastAPI to use the test session
     app.dependency_overrides[get_db_session] = lambda: db_session
+
+
+
+# @pytest.fixture(autouse=True)
+# def noop_logger(monkeypatch):
+#     def _get_logger(name=__name__):
+#         logger = logging.getLogger("test-" + name)
+#         if not logger.handlers:
+#             logger.addHandler(logging.NullHandler())
+#         return logger
+#     monkeypatch.setattr("logger.logging.get_logger", _get_logger)
 
 
 # Create schema once

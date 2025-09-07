@@ -26,10 +26,10 @@ class BookSchema(BaseModel):
         return v
     
 class BookUpdateSchema(BaseModel):
-    title: Optional[str] = Field(None, min_length=1, max_length=255, description="Book title must not be empty")
+    title: Optional[str] = Field(None, min_length=1, max_length=255, description="Book title must be atleast 1 characters")
     author: Optional[str] = Field(None, min_length=3, max_length=255, description="Author name must be at least 3 characters")
     published_year: Optional[int] = Field(None, ge=1450, le=datetime.datetime.now().year, description="Year must be realistic")
-    genre: Optional[Literal['fiction', 'non-fiction', 'science', 'history', 'other']] = None
+    genre: Optional[Literal['fiction', 'non-fiction', 'science', 'history', 'other']] = Field(None, description="('fiction', 'non-fiction', 'science', 'history', 'other') one of these values should be provided")
     available: Optional[bool] = None
 
     # Custom validator for title

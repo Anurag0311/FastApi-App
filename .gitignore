@@ -1,6 +1,7 @@
 __init__.py
 __pycache__
 .pytest_cache
+test.db
 
 .env
 /venv

@@ -99,7 +99,7 @@ async def get_book(
 
     # Apply filters if provided
     if author is not None:
-        query = query.filter(Book.author == author)
+        query = query.filter(Book.author.ilike(f"%{author}%"))
     if genre is not None:
         query = query.filter(Book.genre == genre)
     if available is not None:
