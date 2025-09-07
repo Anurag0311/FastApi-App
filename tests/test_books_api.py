@@ -37,17 +37,6 @@ def override_db_dependency(db_session):
     app.dependency_overrides[get_db_session] = lambda: db_session
 
 
-
-# @pytest.fixture(autouse=True)
-# def noop_logger(monkeypatch):
-#     def _get_logger(name=__name__):
-#         logger = logging.getLogger("test-" + name)
-#         if not logger.handlers:
-#             logger.addHandler(logging.NullHandler())
-#         return logger
-#     monkeypatch.setattr("logger.logging.get_logger", _get_logger)
-
-
 # Create schema once
 Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
