@@ -18,7 +18,5 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - "3306:3306"
     volumes:
       - ${HOST_DB_PATH}:/var/lib/mysql   # MySQL data mapped to host folder
